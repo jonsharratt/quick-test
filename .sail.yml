@@ -1,5 +1,32 @@
 # prettier-ignore
 tasks:
   install:
-    image: node:10.11.0
+    image: node:10.11.0-alpine
     command: ["yarn"]
+  package-1:
+    image: sailci/run
+    command:
+      - "echo"
+    args:
+      - "package 1"
+    when:
+      paths:
+        - "packages/package-1/**/*"
+  package-2:
+    image: sailci/run
+    command:
+      - "echo"
+    args:
+      - "package 2"
+    when:
+      paths:
+        - "packages/package-2/**/*"
+  package-3:
+    image: sailci/run
+    command:
+      - echo
+    args:
+      - "package 3"
+    when:
+      paths:
+        - "packages/package-3/**/*"
