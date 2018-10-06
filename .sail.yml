@@ -23,18 +23,18 @@ tasks:
       - "package 3"
 workflow:
   - install:
-    when:
-      paths:
-        - "packages/**/*"
+      when:
+        paths:
+          - "packages/**/*"
   - package-1:
-    when:
-      paths:
-        - "packages/package-1/**/*"
+      when:
+        paths:
+          - "packages/package-1/**/*"
   - package-2:
-    when:
-      paths:
-        - "packages/package-2/**/*"
+      when:
+        paths:
+          - "packages/package-2/**/*"
   - package-2:
-    when:
-      paths:
-        - "packages/package-3/**/*"
+      when:
+        paths:
+          - "packages/package-3/**/*"
