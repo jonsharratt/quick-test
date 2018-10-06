@@ -22,7 +22,7 @@ tasks:
     args:
       - "package 3"
 workflow:
-  - install
+  - install:
     when:
       paths:
         - "packages/**/*"
