@@ -32,9 +32,10 @@ workflow:
           - "packages/package-1/**/*"
   - package-2:
       when:
+        ref: \/heads\/develop$
         paths:
           - "packages/package-2/**/*"
-  - package-2:
+  - package-3:
       when:
         paths:
           - "packages/package-3/**/*"
