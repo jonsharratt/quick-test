@@ -1,0 +1,5 @@
+# prettier-ignore
+tasks:
+  install:
+    image: node:10.11.0
+    command: ["yarn"]
