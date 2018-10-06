@@ -9,24 +9,32 @@ tasks:
       - "echo"
     args:
       - "package 1"
-    when:
-      paths:
-        - "packages/package-1/**/*"
   package-2:
     image: sailci/run
     command:
       - "echo"
     args:
       - "package 2"
-    when:
-      paths:
-        - "packages/package-2/**/*"
   package-3:
     image: sailci/run
     command:
       - echo
     args:
       - "package 3"
+workflow:
+  - install
+    when:
+      paths:
+        - "packages/**/*"
+  - package-1:
+    when:
+      paths:
+        - "packages/package-1/**/*"
+  - package-2:
+    when:
+      paths:
+        - "packages/package-2/**/*"
+  - package-2:
     when:
       paths:
         - "packages/package-3/**/*"
